@@ -1,2 +1,2 @@
 # blueprint-cognitive-complexity
-A cognitive complexity plugin for unreal blueprints..
+A cognitive complexity plugin for unreal blueprints.
