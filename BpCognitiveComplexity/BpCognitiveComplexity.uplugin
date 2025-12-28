@@ -1,0 +1,24 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "Blueprint Cognitive Complexity",
+	"Description": "Helps write better blueprints by using cognitive complexity badges on Blueprint entry nodes.",
+	"Category": "Development",
+	"CreatedBy": "MurtazaHere",
+	"CreatedByURL": "",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"CanContainContent": false,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "BpCognitiveComplexity",
+			"Type": "Editor",
+			"LoadingPhase": "Default"
+		}
+	]
+}
