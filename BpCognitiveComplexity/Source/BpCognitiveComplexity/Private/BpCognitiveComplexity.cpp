@@ -66,15 +66,15 @@ public:
 			return BaseLayer;
 		}
 
-		const UBpCognitiveComplexitySettings* Settings = UBpCognitiveComplexitySettings::Get();
-		if (Settings == nullptr)
+		const UBpCognitiveComplexitySettings* BpCognitiveComplexitySettings = UBpCognitiveComplexitySettings::Get();
+		if (BpCognitiveComplexitySettings == nullptr)
 		{
 			return BaseLayer;
 		}
 
 		const FCognitiveComplexityScore Score = ComplexityModule->GetScoreForNode(*GraphNode);
 		const FSlateFontInfo FontInfo = FAppStyle::GetFontStyle(TEXT("BlueprintEditor.Node.TitleFont"));
-		const FString Label = ComplexityModule->GetComplexityLabelForPercent(Score.Percent, Settings);
+		const FString Label = ComplexityModule->GetComplexityLabelForPercent(Score.Percent, BpCognitiveComplexitySettings);
 		// Prefix with a small diamond-like glyph to subtly echo IDE complexity indicators.
 		const FString Text = FString::Printf(TEXT("◆ %s (%.0f%%)"), *Label, Score.Percent);
 		const FVector2D TextSize = FSlateApplication::Get().GetRenderer()->GetFontMeasureService()->Measure(Text, FontInfo);
@@ -90,7 +90,7 @@ public:
 
 		if (ComplexityModule->GetShowEntryBadges())
 		{
-			const FLinearColor BadgeColor = ComplexityColorForPercent(*Settings, Score.Percent);
+			const FLinearColor BadgeColor = ComplexityColorForPercent(*BpCognitiveComplexitySettings, Score.Percent);
 
 			// Draw only colored text (no filled background) to keep the indicator subtle.
 			FSlateDrawElement::MakeText(
